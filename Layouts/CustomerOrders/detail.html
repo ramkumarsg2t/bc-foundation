@@ -1,0 +1,121 @@
+<section class="container">
+	<div class="twelve columns">
+	
+		<ul class="breadcrumbs clearfix">
+			<li><a href="/">Home</a> &raquo;&nbsp;</li>
+			<li><a href="/my-account">My Account</a>  &raquo;&nbsp;</li>
+			<li>{tag_ordername}</li>
+		</ul>
+	
+		<h4>{tag_ordername}</h4>
+		<hr>
+	
+		<div class="three columns alpha">
+			<label for="recipientname">Recipient:</label>
+			<div id="recipientname">{tag_recipientname}</div>
+		</div>
+		
+		<div class="three columns">
+			<label for="invoicedate">Invoice date:</label>
+			<div id="invoicedate">{tag_invoicedate}</div>
+			<label for="invoicenumber">Invoice number:</label>
+			<div id="invoicenumber">{tag_invoicenumber}</div>
+		</div>
+		
+		<div class="three columns">
+			<label for="billingaddress">Billing Address:</label>
+			<div id="billingaddress">{tag_addressbilling}</div>	
+		</div>
+		
+		<div class="three columns omega">
+			<label for="shippingaddress">Shipping Address:</label>
+			<div id="shippingaddress">{tag_addressshipping}</div>
+		</div>
+		
+		<div class="clear"></div><br/>
+		
+		<h4>Order contents</h4>
+		<hr>
+		
+		<table class="order-product-list" cellpadding="0" cellspacing="0" id="old">
+			<thead>
+				<tr>
+					<th>Product</th>
+					<th>Price</th>
+					<th>Tax</th>
+					<th>Quantity</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{tag_productname}</td>
+					<td>{tag_productextaxamount}</td>
+					<td>{tag_producttaxamount}</td>
+					<td>{tag_productquantity}</td>
+					<td>{tag_producttotal}</td>
+				</tr>
+			</tbody>
+		</table>
+	
+		<script>
+			
+			/* Script for turning the order-product-list into a propper table for a better responsive design */
+			
+			var table = $("<table />");
+			var tbody = $("<tbody />");
+			table.insertAfter("table.order-product-list");
+			table.addClass("order-product-list collapsing-table");
+			
+			$(".order-product-list thead").clone().appendTo(table);
+			tbody.appendTo(table);
+			
+			var rowCount = $(".order-product-list tbody td:first-child .productitemcell").length;
+			var colCount = $(".order-product-list tbody td").length;
+			
+			for (var i = 1; i <= rowCount; i++) {
+				var tr = $("<tr />"); 
+				tbody.append(tr);
+				for (var j = 1; j <= colCount; j++) {
+					var td = $("<td />");
+					tr.append(td);
+					
+					var q = ".order-product-list tbody td:nth-child(" + j + ") .productitemcell:nth-child(" + i + ")";
+					td.text($(q).text());
+				}
+			}
+			
+			$('table.order-product-list#old').remove();
+		
+		</script>
+	
+		<br/>
+	
+		<h4>Payment</h4>
+		<hr>
+		
+		<table cellpadding="0" cellspacing="0" class="data-table">
+			<tr>
+				<td>Shipping</td>
+				<td style="text-align: right;">{tag_shippingextaxamount}</td>
+			</tr>
+			<tr>
+				<td>Shipping Tax</td>
+				<td style="text-align: right;">{tag_shippingtaxamount}</td>
+			</tr>
+			<tr>
+				<td><strong>Invoice Total</strong></td>
+				<td style="text-align: right;"><strong>{tag_invoicetotal}</strong></td>
+			</tr>
+			<tr>
+				<td><strong>Amount Paid</strong></td>
+				<td style="text-align: right;"><strong>{tag_amountpaid}</strong></td>
+			</tr>
+			<tr>
+				<td><strong>Amount Outstanding</strong></td>
+				<td style="text-align: right;"><strong>{tag_amountoutstanding}</strong></td>
+			</tr>
+		</table>
+	
+	</div>
+</section>

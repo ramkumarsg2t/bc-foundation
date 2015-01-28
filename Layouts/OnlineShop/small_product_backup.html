@@ -1,0 +1,29 @@
+<!-- This page gets included wherever you use {module_productfeaturelist}  -->
+<!--
+    This page uses tags. 	
+	For a complete list of tags explained please visit
+	http://helpx.adobe.com/business-catalyst/kb/tags---quick-reference.html
+-->
+
+<div class="three columns">
+	<div class="product">
+		<div class="image-with-price">
+			{tag_smallimage}
+			<span>
+			
+				<!-- The script below inserts the formated price here -->
+			
+				<script>
+					// Script to extract the currency and decimals from the price
+					var price = "{tag_saleprice}";
+					var priceWithoutCurrency = price.replace( /^\D+/g, '')
+					var decimals = priceWithoutCurrency.substring(priceWithoutCurrency.length - 2, priceWithoutCurrency.length);
+					var roundedPrice = priceWithoutCurrency.substring(0, priceWithoutCurrency.length - 3);
+					document.write(roundedPrice+'<sup>'+decimals+'</sup>');
+				</script>
+			
+			</span>
+		</div>
+		{tag_name}
+	</div>
+</div>

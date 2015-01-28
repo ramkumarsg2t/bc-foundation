@@ -1,0 +1,50 @@
+<section class="container">
+	<div class="twelve columns">
+	
+		<ul class="breadcrumbs clearfix">
+			<li><a href="/">Home</a> &raquo;&nbsp;</li>
+			<li><a href="/my-account">My Account</a>  &raquo;&nbsp;</li>
+			<li>{tag_subject}</li>
+		</ul>
+	
+		<h4>Case Details</h4>
+		<hr>
+		
+		<div class="four columns alpha">
+			<label>Subject</label>
+			<p>{tag_subject}</p>
+			
+			<label>Description</label>
+			<p id="description">
+				{tag_description}
+				<script>if('{tag_description}'=='') $('#description').html('N/A');</script>
+			</p>
+			
+			<label>Status</label>
+			<p>{tag_status}</p>	
+		</div>
+		
+		<div class="four columns">
+			<label>Category</label>
+			<p>{tag_category}</p>
+			
+			<label>Assigned To</label>
+			<p>{tag_assignedto}</p>	
+		</div>
+		
+	
+		<div class="four columns">
+			<label>Create Date</label>
+			<p>{tag_createdate}</p>
+			
+			<label>Last Update Date</label>
+			<p>{tag_lastupdatedate}</p>	
+		</div>
+		
+		<div class="clear"></div>
+		
+		<label>Thread</label>
+		<div style="background: #f6f6f6;padding: 10px;">{tag_thread}</div>
+		
+	</div>
+</section>

@@ -1,0 +1,35 @@
+<!-- This page gets included in /Layouts/Blog/overall.html -->
+<!--
+
+    This page uses modules and tags. 
+	For a complete list of modules explained please visit
+	http://helpx.adobe.com/business-catalyst/kb/modules-quick-reference.html
+	
+	For a complete list of tags explained please visit
+	http://helpx.adobe.com/business-catalyst/kb/tags---quick-reference.html
+	
+-->
+
+	<ul class="breadcrumbs clearfix">
+		<li><a href="/_blog/Blog">&larr; Back to Blog Posts</a></li>
+	</ul>
+	
+	<article class="blogpost">
+		<header>
+			<div class="avatar">
+				<div class="overlay"><img src="/img/small-avatar-overlay.png" width="100" height="100" alt=""></div>
+				<img src="{tag_blogpostauthorpictureurl}" width="100" height="100" alt="user">
+			</div>
+			<h3>{tag_blogposttitle_nolink}</h3>	
+		</header>
+		<span class="meta-info">Posted on <strong>{tag_blogpostdate}</strong> by <strong>{tag_blogpostauthor}</strong></span>
+	
+		{tag_blogpostbody}
+		
+		
+		<a name="comments"></a>
+		{module_facebookcomments, url="{module_siteurl}{tag_permalinkonly}", width="520"}
+	
+	</article>
+
+<!-- This page gets included in /Layouts/Blog/overall.html -->

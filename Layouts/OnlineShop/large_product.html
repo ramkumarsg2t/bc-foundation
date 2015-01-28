@@ -1,0 +1,80 @@
+<!-- This page gets included in Layouts/OnlineShop/page_content.html -->
+<!--
+
+    This page uses modules and tags. 
+    For a complete list of modules explained please visit
+    http://helpx.adobe.com/business-catalyst/kb/modules-quick-reference.html
+    
+    For a complete list of tags explained please visit
+    http://helpx.adobe.com/business-catalyst/kb/tags---quick-reference.html
+    
+-->
+
+	<h3 class="big-product-title">{tag_name}</h3>		
+
+	<div class="image-with-price big">
+		{tag_largeimage}
+		<span>
+			<script>
+				// Script to extract the currency and decimals from the price
+				var price = "{tag_saleprice}";
+				var priceWithoutCurrency = price.replace( /^\D+/g, '')
+				var decimals = priceWithoutCurrency.substring(priceWithoutCurrency.length - 2, priceWithoutCurrency.length);
+				var roundedPrice = priceWithoutCurrency.substring(0, priceWithoutCurrency.length - 3);
+				$('.image-with-price.big span').html(roundedPrice+'<sup>'+decimals+'</sup>');
+			</script>
+		</span>
+	</div>
+	<ul class="gallery-thumbnails">
+		{tag_poplets}
+	</ul>
+
+	<br/>
+
+	<h3>Description</h3>
+	<p class="description">{tag_description}</p>
+	
+	<script>
+		// Script for selecting size
+		$(document).ready(function(){
+			$('.catProdAttributeItem span').click(function(){
+				$(this).parent().find('input[type="radio"]').attr('checked','checked');
+				$(this).parent().siblings().find('span').removeClass('selected');
+				$(this).addClass('selected');
+			});
+		});
+	</script>
+	
+	<div class="five columns alpha">
+	
+		{tag_attributes,size}
+	</div>
+	
+	<div class="four columns omega">
+	
+		<h3>Quantity</h3>
+		
+		{tag_addtocartinputfield}
+
+	</div>
+	
+	<div class="clear"></div>
+
+	{tag_buynow}
+	
+	<script>
+		// Script to capture poplets click and load the image inside the page instead of a modal view
+		
+		$(document).ready(function(){
+			$('.productPopletsItem a').removeAttr('onClick'); // Clear the old onClick event
+			$('.productPopletsItem a').removeAttr('rel'); // Clear the old onClick event
+			
+			$('.productPopletsItem a').click(function(e){ // Add the new functionality
+				
+				e.preventDefault();
+				$('.image-with-price.big img').attr('src',$(this).attr('href'));
+				
+			})
+		});
+		
+	</script>
