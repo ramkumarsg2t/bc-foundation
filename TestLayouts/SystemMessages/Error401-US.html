@@ -1,0 +1,116 @@
+<!-- Header & Footer contained in template: Templates/Default.html -->
+<!--
+
+	This page uses modules. 
+	For a complete list of modules explained please visit
+	http://helpx.adobe.com/business-catalyst/kb/modules-quick-reference.html
+	
+-->
+
+<section class="container">
+	<div class="twelve columns">
+	
+		<ul class="breadcrumbs clearfix">
+			<li><a href="/">&larr; Back to Homepage</a></li>
+		</ul>	
+	
+		<h3>Please login to access your account</h3>
+		<hr>
+	
+		<div class="six columns alpha">
+			
+			<h4>I'm already a customer:</h4>
+			
+			<form name="catseczoneform47007" onsubmit="return checkWholeForm47007(this)" method="post" action="/ZoneProcess.aspx?ZoneID=51&amp;Referrer={module_siteUrl,true,true}&amp;OID={module_oid}&amp;OTYPE={module_otype}">
+	
+				<label for="SZUsername">Username</label>
+				<input class="cat_textbox_small" type="text" name="Username" id="SZUsername" maxlength="255" />
+				<label for="SZPassword">Password</label>
+				<input class="cat_textbox_small" type="password" name="Password" id="SZPassword" maxlength="255" />
+				<label for="RememberMe" style="margin-bottom: 20px;"><input type="checkbox" name="RememberMe" id="RememberMe" /> Remember Me</label>
+				
+				<input class="cat_button" type="submit" value="Log in" style="margin-right: 20px;" /><a href="/_System/SystemPages/PasswordRetrieveRequest">Lost password?</a>
+	
+				<script type="text/javascript" src="/CatalystScripts/ValidationFunctions.js"></script>
+				<script type="text/javascript">
+					//<![CDATA[
+					function checkWholeForm47007(theForm){var why = "";if (theForm.Username) why += isEmpty(theForm.Username.value, "Username");if (theForm.Password) why += isEmpty(theForm.Password.value, "Password");if (why != ""){alert(why);return false;}theForm.submit();return false;}
+					//]]>
+				</script>
+			</form>
+		</div>
+	
+		<div class="six columns omega">
+			<h4>I'm a new customer:</h4>
+			
+			<form name="catwebformform23563" method="post" onsubmit="return checkWholeForm23563(this)" enctype="multipart/form-data" action="https://universalis.worldsecuresystems.com/FormProcessv2.aspx?WebFormID=52790&OID={module_oid}&OTYPE={module_otype}&EID={module_eid}&CID={module_cid}&CC={module_urlcountrycode}&Referrer={module_siteurl,true,true}">
+			
+				<label for="FirstName">First Name <span class="req">*</span></label>
+				<input type="text" name="FirstName" id="FirstName" class="cat_textbox" maxlength="255" /> 
+			
+			
+				<label for="LastName">Last Name <span class="req">*</span></label>
+				<input type="text" name="LastName" id="LastName" class="cat_textbox" maxlength="255" /> 
+			
+			
+				<label for="EmailAddress">Email Address <span class="req">*</span></label>
+				<input type="text" name="EmailAddress" id="EmailAddress" class="cat_textbox" maxlength="255" /> 
+			
+			
+				<label for="Username">Username <span class="req">*</span></label>
+				<input type="text" name="Username" id="Username" class="cat_textbox" maxlength="255" />
+			
+			
+				<label for="Password">Password <span class="req">*</span></label>
+				<input type="password" name="Password" id="Password" class="cat_textbox" maxlength="255" />
+			
+			
+				<label for="PasswordConfirm">Confirm Password <span class="req">*</span></label>
+				<input type="password" name="PasswordConfirm" id="PasswordConfirm" class="cat_textbox" maxlength="255" />
+			
+			
+				<input class="cat_button" type="submit" value="Create Account" id="catwebformbutton" />
+			
+				<script type="text/javascript" src="/CatalystScripts/ValidationFunctions.js"></script>
+				<script type="text/javascript">
+					//<![CDATA[
+					var submitcount2563 = 0;
+					
+					function checkWholeForm23563(theForm){
+						var why = "";
+						
+						if (theForm.FirstName) why += isEmpty(theForm.FirstName.value, "First Name");
+						if (theForm.LastName) why += isEmpty(theForm.LastName.value, "Last Name");
+						if (theForm.EmailAddress) why += checkEmail(theForm.EmailAddress.value);
+						if (theForm.Username) why += isEmpty(theForm.Username.value, "Username");
+						if (theForm.Password && theForm.PasswordConfirm) {
+							why += isEmpty(theForm.Password.value, "Password");
+							why += isEmpty(theForm.PasswordConfirm.value, "Confirm Password");
+							if (theForm.Password.value != theForm.PasswordConfirm.value) why += appendBreak("- Password and its confirmation do not match.");
+							if (theForm.Password.value.length < 6) why += appendBreak("- Password must be 6 characters or longer.");
+						}
+						
+						if(why != ""){
+							alert(why);
+							return false;
+						}
+						
+						if(submitcount2563 == 0){
+							submitcount2563++;
+							theForm.submit();
+							return false;
+						}else{
+							alert("Form submission is in progress.");
+							return false;
+						}
+					}
+					//]]>
+				</script>
+			</form>
+	
+		</div>
+	
+	</div>
+</section>
+
+<!-- Header & Footer contained in template: Templates/Default.html -->

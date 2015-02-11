@@ -1,0 +1,110 @@
+<!-- Header & Footer contained in template: Templates/Shop.html -->
+<!--
+
+	This page uses tags. 	
+	For a complete list of tags explained please visit
+	http://helpx.adobe.com/business-catalyst/kb/tags---quick-reference.html
+
+-->
+
+<section class="container">
+	<div class="twelve columns">
+
+		<h3>Your Shopping Cart</h3>
+		<hr>
+		
+		<div class="shop-cart">
+			<table class="cart" id="cart-product-list" cellpadding="0" cellspacing="0">
+				<thead>
+					<tr class="var">
+						<th class="first-column">Product</th>
+						<th>Price</th>
+						<th class="quantity">Quantity</th>
+						<th>Tax</th>
+						<th>Total</th>
+						<th>&nbsp;</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="val">
+						<td class="first-column">{tag_productname}</td>
+						<td>{tag_productextaxamount}</td>
+						<td class="quantity">{tag_productquantity}</td>
+						<td>{tag_producttaxrate}</td>
+						<td>{tag_producttotal}</td>
+						<td>{tag_productremovelink}</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<script>
+				
+				/* Script for turning the Cart Product List into a propper table for a better responsive design */
+				
+				var table = $("<table />");
+				var tbody = $("<tbody />");
+				table.insertAfter("table#cart-product-list");
+				table.addClass("cart product-list collapsing-table");
+				
+				$("#cart-product-list thead").clone().appendTo(table);
+				tbody.appendTo(table);
+				
+				var rowCount = $("#cart-product-list tbody td:first-child .productitemcell").length;
+				var colCount = $("#cart-product-list tbody td").length;
+				
+				for (var i = 1; i <= rowCount; i++) {
+					var tr = $("<tr />"); 
+					tbody.append(tr);
+					for (var j = 1; j <= colCount; j++) {
+						var td = $("<td />");
+						tr.append(td);
+						
+						var q = "#cart-product-list tbody td:nth-child(" + j + ") .productitemcell:nth-child(" + i + ")";
+						td.html($(q).html());
+					}
+				}
+				
+				$('table#cart-product-list').remove();
+			
+			</script>		
+			
+			<table class="cart" cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr class="sub-total">
+						<td class="first-column" colspan="2"><strong>Sub-Total</strong></td>
+						<td class="quantity"><strong>{tag_totalunits} units</strong></td>
+						<td><strong>{tag_productgrandtotal}</strong></td>
+					</tr>
+					<tr class="discount">
+						<td class="first-column">Discount</td>
+						<td colspan="2" class="quantity">{tag_discountcode} <input class="update" onclick="return false;" type="button" value="Update" /></td>
+						<td>({tag_invoicediscountamount})</td>
+					</tr>
+					<tr class="giftvoucher">
+						<td class="first-column">Gift Voucher</td>
+						<td colspan="2" class="quantity">{tag_giftvoucher} <input class="update" onclick="return false;" type="button" value="Update" /></td>
+						<td>({tag_giftvoucheramount})</td>
+					</tr>
+					<tr class="shipping">
+						<td class="first-column">Shipping</td>
+						<td colspan="2" class="quantity">&nbsp;{tag_shippingoptions}</td>
+						<td>{tag_shippingtotal}</td>
+					</tr>
+					<tr class="total">
+						<td class="first-column" colspan="2"><strong>Total</strong></td>
+						<td>&nbsp;</td>
+						<td><strong>{tag_invoicetotal}</strong></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<div class="actions">
+				{tag_clearcartbutton} {tag_getquotebutton} {tag_buybutton}
+			</div>		
+			
+		</div>
+
+	</div>
+</section>
+
+<!-- Header & Footer contained in template: Templates/Shop.html -->
