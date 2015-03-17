@@ -40,7 +40,7 @@
             }, {
                 "name": "tracklist.html",
                 "type": "file"
-            }, ]
+            }]
         }, {
             "name": "Booking",
             "type": "folder",
