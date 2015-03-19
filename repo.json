@@ -2,7 +2,7 @@
     "name": "bc-foundation",
     "username": "ramkumarsg2t",
     "structure": {
-        "layouts": [{
+        "Layouts": [{
             "name": "Affiliate",
             "type": "folder",
             "files": [{
