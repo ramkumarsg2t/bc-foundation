@@ -3,6 +3,13 @@
     "username": "ramkumarsg2t",
     "structure": {
         "Layouts": [{
+            "name": "Test Affiliate",
+            "type": "folder",
+            "files": [{
+                "name": "affiliate.html",
+                "type": "file"
+            }]
+        },{
             "name": "Affiliate",
             "type": "folder",
             "files": [{
