@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+	<meta charset="UTF-8" />
+	<title>BCPie Update Tools</title>
+	<link rel="stylesheet" href="/_system/apps/bcpie-layouts/styles/admin.css">
+	<link rel="stylesheet" href="/_system/apps/bcpie-layouts/styles/app.css">
+	<link rel="stylesheet" href="/_system/apps/bcpie-layouts/styles/jquery-ui.css">
+	<script src="/_system/apps/bcpie-layouts/scripts/min/appHead.min.js"></script>
+	
+	<link rel="stylesheet" href="/_system/apps/bcpie-layouts/styles/ui.dynatree.vista.css">
+</head>
+<body>
+	<div></div>
+	<div id="pagecontainer" class="hide">
+		<header id="pageheader" role="banner">
+			<div class="row">
+				<div class="small-8 columns">
+					<h1>BC PIE Updates</h1>
+				</div>
+			</div>
+		</header>
+		<main id="pagecontent" role="main">
+			<form data-bc-formmagic="validateMode:inline;">
+				<div class="row">
+					<div class="small-12 end columns">
+						The following are the frameworks/files that you can update in the Business Catalyst. 
+					</div>
+				</div>
+				<div class="row">
+					<div class="small-12 columns"><hr></div>
+				</div>
+				<div class="row">
+					<div class="small-4 columns">
+						Frameworks Available:
+					</div>
+					<div class="small-8 columns">
+						<select name="frameworks" class="required">
+							<option>-- Select --</option>
+						</select>
+					</div>
+				</div>
+				<div class="row hide" id="divUpdate">
+					<div class="small-4 columns">
+						App update available
+					</div>
+					<div class="small-8 columns">
+						<input type="button" class="button" name="btnUpdateApp" value="Update App"/>
+					</div>
+				</div>
+				<div class="row hide" id="folderContainer">
+					<div class="small-12 columns">
+						<div id="tabs">
+						  <ul>
+						    <li><a href="#layouts">Layouts</a></li>
+						    <li><a href="#core">Core</a></li>
+						  </ul>
+						  <div id="layouts">
+							<span id="foldersListContainer" class="listContainer">
+								<h4>Layouts</h4>							
+								<p>
+									<a href="#" class="btnSelectAll">Select all</a> -	
+									<a href="#" class="btnDeselectAll">Deselect all</a> -
+									<a href="#" class="btnToggleSelect">Toggle select</a>
+								</p>
+								<div id="foldertree" class="tree"></div>
+							</span>
+						  </div>
+						  <div id="core">
+						  	 <span id="foldersListContainer" class="listContainer">
+								<h4>Core</h4>							
+								<p>
+									<a href="#" class="btnSelectAll">Select all</a> -
+									<a href="#" class="btnDeselectAll">Deselect all</a> -
+									<a href="#" class="btnToggleSelect">Toggle select</a>
+								</p>
+								<div id="coreTree" class="tree"></div>
+
+							</span>
+						  </div>
+						</div>
+					</div>
+					<div class="small-12 columns">
+						<div id="updateTree" class="tree"></div>
+						<input type="button" class="button" name="Update" value="Update"/>
+					</div>
+				</div>
+			</form>
+		</main>
+		<footer id="pagefooter" role="contentinfo">
+
+		</footer>
+	</siv>
+	<div id="bcmodules" style="display:none;"
+		data-bc-pageaddress="{module_pageaddress}"
+		data-bc-sitehost="{module_sitehost}"
+		data-bc-siteurl="{module_siteurl}"
+	></div>
+	<script src="/_system/apps/bcpie-layouts/scripts/min/appFoot.min.js"></script>
+	<script src="/_system/AppResources/scripts/oneapps.js"></script>
+	<script src="/_system/apps/bcpie-layouts/scripts/github-files.js"></script>
+	
+	<script src="/_system/apps/bcpie-layouts/scripts/jquery-ui.custom.js"></script>
+	<script src="/_system/apps/bcpie-layouts/scripts/jquery.dynatree.js"></script>
+	
+
+	<script src="/_system/apps/bcpie-layouts/scripts/appScripts.js"></script>
+</body>
+</html>
