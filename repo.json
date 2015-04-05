@@ -481,6 +481,27 @@
                 ]
             }
         ],
+        "bcpieLayoutsApp" : [{
+                "name" : "_System",
+                "type" : "folder",
+                "files" : [
+                    {
+                        "name" : "Apps",
+                        "type" : "folder",
+                        "files" : [{
+                            "name" : "bcpie-layouts",
+                            "type" : "folder",
+                            "files" : [
+                                {
+                                    "name" : "index.html",
+                                    "type" : "file"
+                                }
+                            ]
+                        }]
+                    }
+                ]
+            }
+        ]
         "template": []
     }
 }
