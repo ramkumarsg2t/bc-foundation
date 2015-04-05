@@ -471,6 +471,10 @@
                             {
                                 "name" : "headScripts.min.js",
                                 "type" : "file"
+                            },
+                            {
+                                "name" : "devinabox.min.js",
+                                "type" : "file"
                             }
                         ]
                     }
