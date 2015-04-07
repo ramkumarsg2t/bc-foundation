@@ -3,28 +3,21 @@
     "username": "ramkumarsg2t",
     "structure": {
         "bcpieLayoutsApp" : [{
-                "name" : "_System",
+                "name" : "bcpie-bcpie",
                 "type" : "folder",
                 "files" : [{
-                            "name" : "bcpie-layouts",
+                            "name" : "_config",
                             "type" : "folder",
                             "files" : [
                                 {
-                                    "name" : "index.html",
+                                    "name" : "menu.json",
                                     "type" : "file"
-                                },
-                                {
-                                    "name" : "_config",
-                                    "type" : "folder",
-                                    "files" : 
-                                        {
-                                            "name" : "menu.json",
-                                            "type" : "file"
-                                        }
-                                    
                                 }
                             ]
-                        }]
+                        },
+                            "name" : "images",
+                            "type" : "folder"
+                        ]
             }
         ],
         "template": []
