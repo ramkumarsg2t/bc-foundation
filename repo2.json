@@ -20,7 +20,11 @@
                             "type" : "folder",
                              "files" : [
                                 {
-                                    "name" : "image.img",
+                                    "name" : "icons.gif",
+                                    "type" : "file"
+                                },
+                                {
+                                    "name" : "slice.png",
                                     "type" : "file"
                                 }
                             ]
