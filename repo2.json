@@ -2,10 +2,8 @@
     "name": "bc-foundation",
     "username": "ramkumarsg2t",
     "structure": {
-        "bcpieLayoutsApp" : [{
-                "name" : "bcpie-bcpie",
-                "type" : "folder",
-                "files" : [{
+        "bcpieLayoutsApp" : [
+                        {
                             "name" : "_config",
                             "type" : "folder",
                             "files" : [
@@ -43,7 +41,7 @@
                                     "type" : "file"
                                 },
                                 {
-                                    "name" : "appScripts.js",
+                                    "name" : "appScripts2.js",
                                     "type" : "file"
                                 },
                                 {
@@ -101,9 +99,7 @@
                             "name" : "settings.json",
                             "type" : "file"
                         }
-                        ]
-            }
-        ],
-        "template": []
+                        
+        ]
     }
 }
