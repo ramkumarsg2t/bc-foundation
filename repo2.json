@@ -29,6 +29,44 @@
                                 }
                             ]
 
+                        },
+                        {
+                            "name" : "scripts",
+                            "type" : "folder",
+                            "files" : [
+                                {
+                                    "name" : "appFoot.js",
+                                    "type" : "file"
+                                },
+                                {
+                                    "name" : "appHead.js",
+                                    "type" : "file"
+                                },
+                                {
+                                    "name" : "appScripts.js",
+                                    "type" : "file"
+                                },
+                                {
+                                    "name" : "github-files.js",
+                                    "type" : "file"
+                                },
+                                {
+                                    "name" : "jquery-ui.custom.js",
+                                    "type" : "file"
+                                },
+                                {
+                                    "name" : "jquery.dynatree.js",
+                                    "type" : "file"
+                                },
+                                {
+                                    "name" : "jquery.js",
+                                    "type" : "file"
+                                },
+                                {
+                                    "name" : "settings.json",
+                                    "type" : "file"
+                                }
+                            ]
                         }
                         ]
             }
