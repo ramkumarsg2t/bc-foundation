@@ -14,21 +14,6 @@
                             ]
                         },
                         {
-                            "name" : "images",
-                            "type" : "folder",
-                             "files" : [
-                                {
-                                    "name" : "icons.gif",
-                                    "type" : "file"
-                                },
-                                {
-                                    "name" : "slice.png",
-                                    "type" : "file"
-                                }
-                            ]
-
-                        },
-                        {
                             "name" : "scripts",
                             "type" : "folder",
                             "files" : [
