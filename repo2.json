@@ -2,7 +2,7 @@
     "name": "bc-foundation",
     "username": "ramkumarsg2t",
     "structure": {
-        "core": [
+        "bcpieLayoutsApp": [
             {
                 "name" : "Scripts",
                 "type" : "folder",
