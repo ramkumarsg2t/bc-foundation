@@ -9,12 +9,6 @@
                     {
                         "name" : "Apps",
                         "type" : "folder",
-                        "files" : [
-                            {
-                                "name" : "bcpie-layouts",
-                                "type" : "folder",   
-                            }
-                        ]
                     }
                 ]
             }
