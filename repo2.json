@@ -9,20 +9,12 @@
                     {
                         "name" : "Apps",
                         "type" : "folder",
-                        "files" : [{
-                            "name" : "bcpie-layouts",
-                            "type" : "folder",
-                            "files" : [
-                                {
-                                    "name" : "index.html",
-                                    "type" : "file"
-                                },
-                                {
-                                    "name" : "_config",
-                                    "type" : "folder"
-                                }
-                            ]
-                        }]
+                        "files" : [
+                            {
+                                "name" : "bcpie-layouts",
+                                "type" : "folder",   
+                            }
+                        ]
                     }
                 ]
             }
