@@ -17,7 +17,14 @@
                         },
                         {
                             "name" : "images",
-                            "type" : "folder"
+                            "type" : "folder",
+                             "files" : [
+                                {
+                                    "name" : "image.img",
+                                    "type" : "file"
+                                }
+                            ]
+
                         }
                         ]
             }
