@@ -80,7 +80,7 @@ span.dynatree-drag-helper-img,
 	background-repeat: no-repeat;
 	background-position: left;
 	background-image: url("../images/icons.gif");
-	/*background-position: 0 0;*/
+	background-position: 0 0;
 }
 
 /** Used by 'icon' node option: */
