@@ -10,7 +10,7 @@
                         "name" : "Apps",
                         "type" : "folder",
                         "files" : [{
-                            "name" : "bcpie-layouts",
+                            "name" : "bcpielayouts",
                             "type" : "folder",
                             "files" : [
                                 {
