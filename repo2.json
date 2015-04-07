@@ -79,6 +79,16 @@
                                             "type" : "file"
                                         }
                                     ]
+                                },
+                                {
+                                    "name" : "styles",
+                                    "type" : "folder",
+                                    "files" : [
+                                        {
+                                            "name" : "ui.dynatree.vista.css",
+                                            "type" : "file"
+                                        }
+                                    ]
                                 }
                             ]
                         }
