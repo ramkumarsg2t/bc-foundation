@@ -65,6 +65,20 @@
                                 {
                                     "name" : "settings.json",
                                     "type" : "file"
+                                },
+                                {
+                                    "name" : "min",
+                                    "type" : "folder",
+                                    "files" : [
+                                        {
+                                            "name" : "appFoot.min.js",
+                                            "type" : "file"
+                                        },
+                                        {
+                                            "name" : "appHead.min.js",
+                                            "type" : "file"
+                                        }
+                                    ]
                                 }
                             ]
                         }
