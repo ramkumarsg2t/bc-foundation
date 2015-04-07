@@ -79,16 +79,17 @@
                                             "type" : "file"
                                         }
                                     ]
-                                },
+                                }
+
+                            ]
+                        },
+                        {
+                            "name" : "styles",
+                            "type" : "folder",
+                            "files" : [
                                 {
-                                    "name" : "styles",
-                                    "type" : "folder",
-                                    "files" : [
-                                        {
-                                            "name" : "ui.dynatree.vista.css",
-                                            "type" : "file"
-                                        }
-                                    ]
+                                    "name" : "ui.dynatree.vista.css",
+                                    "type" : "file"
                                 }
                             ]
                         }
