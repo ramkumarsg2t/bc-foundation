@@ -218,8 +218,8 @@ $(function() {
                     checkedFiles = [];
                     checkedFiles = $.map($("#updateTree").dynatree("getSelectedNodes"), function(node) { if(!node.childList){ return node.data.key } });
                 
-                for (i = 0; i < checkedFiles.length; i++) {
-                    var filePath = checkedFiles[i].replace("bcpieLayoutsApp/");
+               /* for (i = 0; i < checkedFiles.length; i++) {
+                    var filePath = checkedFiles[i].replace("bcpieLayoutsApp/","");
                     filePath = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/" + filePath;
                     var targetFilePath = filePath;
                     targetFilePath = targetFilePath.replace('bcpieLayoutsApp/','');
@@ -232,7 +232,31 @@ $(function() {
                             });
                         });
                     });
+                }*/
+                 var count = 0;
+                var updateApp = function(count) {
+                    var filePath = checkedFiles[count].replace("bcpieLayoutsApp/","");
+                    filePath = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/" + filePath;
+                    var targetFilePath = filePath;
+                    targetFilePath = targetFilePath.replace('bcpieLayoutsApp/','');
+                    targetFilePath = targetFilePath.replace('bcpie-layouts','bcpie-bcpie');
+
+                    $.getGithubFileByFilePath(username, repo, filePath, function(fileContents) {
+                        bc.api.file.save(targetFilePath, fileContents).done(function() {
+                            window.clearTimeout();
+                            $.sticky("<b>App Updated Successfully</b>", {
+                                closeImage: "/_system/apps/bcpie-layouts/images/close.png"
+                            });
+                        });
+                    });
+
+                      count++;
+                     if(count <  checkedFiles.length){
+                        updateApp(count);   
+                     }
                 }
+                updateApp(count);
+
                 setTimeout(function() {
                     bc.api.file.save(settingsPath, JSON.stringify(app));
                     appScripts.ui.hideLoading();
