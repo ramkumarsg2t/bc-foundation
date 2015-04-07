@@ -5,12 +5,8 @@
         "bcpieLayoutsApp" : [{
                 "name" : "_System",
                 "type" : "folder",
-                "files" : [
-                    {
-                        "name" : "Apps",
-                        "type" : "folder",
-                        "files" : [{
-                            "name" : "bcpielayouts",
+                "files" : [{
+                            "name" : "bcpie-layouts",
                             "type" : "folder",
                             "files" : [
                                 {
@@ -23,8 +19,6 @@
                                 }
                             ]
                         }]
-                    }
-                ]
             }
         ],
         "template": []
