@@ -16,12 +16,12 @@
                                 {
                                     "name" : "_config",
                                     "type" : "folder",
-                                    "files" : [
+                                    "files" : 
                                         {
                                             "name" : "menu.json",
                                             "type" : "file"
                                         }
-                                    ]
+                                    
                                 }
                             ]
                         }]
