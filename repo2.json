@@ -2,27 +2,36 @@
     "name": "bc-foundation",
     "username": "ramkumarsg2t",
     "structure": {
-        "bcpieLayoutsApp" : [{
-                "name" : "_System",
+        "core": [
+            {
+                "name" : "Scripts",
                 "type" : "folder",
                 "files" : [
                     {
-                        "name" : "Apps",
+                        "name" : "footScripts.js",
+                        "type" : "file"
+                    },
+                    {
+                        "name" : "headScripts.js",
+                        "type" : "file"
+                    },
+                    {
+                        "name" : "min",
                         "type" : "folder",
-                        "files" : [{
-                            "name" : "bcpie-layouts",
-                            "type" : "folder",
-                            "files" : [
-                                {
-                                    "name" : "index.html",
-                                    "type" : "file"
-                                },
-                                {
-                                    "name" : "_config",
-                                    "type" : "folder"
-                                }
-                            ]
-                        }]
+                        "files" : [
+                            {
+                                "name" : "footScripts.min.js",
+                                "type" : "file"
+                            },
+                            {
+                                "name" : "headScripts.min.js",
+                                "type" : "file"
+                            },
+                            {
+                                "name" : "devinabox.min.js",
+                                "type" : "file"
+                            }
+                        ]
                     }
                 ]
             }
