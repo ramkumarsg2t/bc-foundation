@@ -15,7 +15,13 @@
                                 },
                                 {
                                     "name" : "_config",
-                                    "type" : "folder"
+                                    "type" : "folder",
+                                    "files" : [
+                                        {
+                                            "name" : "menu.json",
+                                            "type" : "file"
+                                        }
+                                    ]
                                 }
                             ]
                         }]
