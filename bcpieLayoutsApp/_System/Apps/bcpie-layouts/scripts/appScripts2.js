@@ -64,7 +64,7 @@ $(function() {
                             console.log(contents);
                             repoStructure = JSON.parse(contents);
                             //load repos files and folders
-							treeData = [];		
+                            treeData = [];      
                             treeData = parseTreeData(repoStructure);
                             loadDynaTree(treeData);
                             folderContainer.removeClass('hide');
@@ -206,68 +206,6 @@ $(function() {
             initializeFrameworksAvailable();
             bindRadioCheckEvent();
 
-          /*  body.on('click', '[name="Update"]', function() {
-                appScripts.ui.showLoading();
-                var repo = frameworkRepository,
-                    username = frameworkUserName,
-                    checkedFiles = [],activeTab = $('#tabs').tabs('option','active');
-                if(activeTab == 0)
-                    checkedFiles = $.map($("#foldertree").dynatree("getSelectedNodes"), function(node) { if(!node.childList){ return node.data.key } });
-                else if(activeTab == 1)
-                    checkedFiles = $.map($("#coreTree").dynatree("getSelectedNodes"), function(node) { if(!node.childList){ return node.data.key } });
-                
-                var counter = 0;
-                var updateFile = function(counter) {
-                    var filePath = checkedFiles[counter];
-                    var targetFilePath = filePath;
-                     if(activeTab == 1) targetFilePath = targetFilePath.replace('core/','');
-                     $.getGithubFileByFilePath(username, repo, filePath, function(fileContents) {
-                        bc.api.file.save(targetFilePath, fileContents).done(function() {
-                            window.clearTimeout();
-                            $.sticky("<b>Updated Successfully</b><br>" + targetFilePath, {
-                                closeImage: "/_system/apps/bcpie-layouts/images/close.png"
-                            })
-                        });
-                    });
-                     
-                     counter++;
-                     if(counter <  checkedFiles.length){
-                        updateFile(counter);   
-                     }
-                }
-                 updateFile(counter); 
-                setTimeout(function() {
-                    bc.api.file.save(settingsPath, JSON.stringify(app));
-                    appScripts.ui.hideLoading();
-                    //clear selection
-                    body.find("#foldertree").dynatree("getRoot").visit(function(node) {
-                        node.select(false);
-                    });
-                    body.find("#coreTree").dynatree("getRoot").visit(function(node) {
-                        node.select(false);
-                    });
-                }, 3000);
-            });*/
-
-           /* body.find(".btnToggleSelect").on('click', function() {
-                $(this).parents('.listContainer').find('.tree').dynatree("getRoot").visit(function(node) {
-                    node.toggleSelect();
-                });
-                return false;
-            });
-            body.find(".btnDeselectAll").on('click', function() {
-                $(this).parents('.listContainer').find('.tree').dynatree("getRoot").visit(function(node) {
-                    node.select(false);
-                });
-                return false;
-            });
-            body.find(".btnSelectAll").on('click', function() {
-                $(this).parents('.listContainer').find('.tree').dynatree("getRoot").visit(function(node) {
-                    node.select(true);
-                });
-                return false;
-            });*/
-
         },
         checkAppUpdate : function(){
             $('#divUpdate').removeClass('hide');
@@ -281,9 +219,11 @@ $(function() {
                     checkedFiles = $.map($("#updateTree").dynatree("getSelectedNodes"), function(node) { if(!node.childList){ return node.data.key } });
                 
                 for (i = 0; i < checkedFiles.length; i++) {
-                    var filePath = checkedFiles[i];
+                    var filePath = checkedFiles[i].replace("bcpieLayoutsApp/");
+                    filePath = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/" + filePath;
                     var targetFilePath = filePath;
                     targetFilePath = targetFilePath.replace('bcpieLayoutsApp/','');
+                    targetFilePath = targetFilePath.replace('bcpie-layouts','bcpie-bcpie');
                     $.getGithubFileByFilePath(username, repo, filePath, function(fileContents) {
                         bc.api.file.save(targetFilePath, fileContents).done(function() {
                             window.clearTimeout();
