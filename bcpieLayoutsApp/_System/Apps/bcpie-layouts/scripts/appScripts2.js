@@ -202,6 +202,7 @@ $(function() {
 
         },
         appUpdate : function(){
+            $('#divUpdate').addClass('hide');
             $('input[name="btnUpdateApp"]').on('click',function(){
                 appScripts.ui.showLoading();
                 var app = $.parseJSON(bc.api.file.get(settingsPath)),
@@ -209,8 +210,7 @@ $(function() {
                     checkedFiles = $.map($("#updateTree").dynatree("getSelectedNodes"), function(node) { if(!node.childList){ return node.data.key } });
                 
                 var count = 0;
-                var updateApp = function(count) {
-                    $('#divUpdate').addClass('hide');
+                var update = function(count) {
                     var filePath = checkedFiles[count].replace("bcpieLayoutsApp/","");
                     filePath = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/" + filePath;
                     var targetFilePath = filePath;
@@ -228,13 +228,13 @@ $(function() {
 
                       count++;
                      if(count <  checkedFiles.length){
-                        updateApp(count);   
+                        update(count);   
                      }
                      else{
                        appScripts.ui.hideLoading(); 
                      } 
                 }
-                updateApp(count);
+                update(count);
 
                 /*setTimeout(function() {
                     bc.api.file.save(settingsPath, JSON.stringify(app));
