@@ -77,6 +77,10 @@
                                 {
                                     "name" : "app.css",
                                     "type" : "file"
+                                },
+                                {
+                                    "name" : "admin.css",
+                                    "type" : "file"
                                 }
                             ]
                         },
