@@ -83,10 +83,6 @@
                         {
                             "name" : "index.html",
                             "type" : "file"
-                        },
-                        {
-                            "name" : "settings.json",
-                            "type" : "file"
                         }
                         
         ]
