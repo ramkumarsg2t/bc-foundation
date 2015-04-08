@@ -4,7 +4,8 @@ var doc = document,
     win = window,
     bcmodules = body.find('#bcmodules'),
     appPath = '_System/apps/bcpie-bcpie/',
-    settingsPath = appPath + 'scripts/settings.json',
+   // settingsPath = appPath + 'scripts/settings.json',
+    settingsPath = appPath + 'settings.json',
     oauthTokenAPI = "https://framework-bcpie.rhcloud.com/api/git-token",
     frameworkName ='', frameworkUserName='', frameworkRepository='';
  //test comment123
@@ -200,12 +201,20 @@ $(function() {
 
         },
         checkAppUpdate : function(){
+            //check if update is available
+             var settingsFile = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/settings.json";
+             var targetSettingsFile = "_System/Apps/bcpie-layouts/settings.json";
+             var repo = frameworkRepository;
+             var username = frameworkUserName;
+             $.getGithubFileByFilePath(username, repo, settingsFile, function(fileContents) {
+                var content =  $.parseJSON(bc.api.file.get(settingsPath));
+                console.log(content);
+            }); 
+
             $('#divUpdate').removeClass('hide');
             $('input[name="btnUpdateApp"]').on('click',function(){
                 appScripts.ui.showLoading();
-                var repo = frameworkRepository,
-                    username = frameworkUserName,
-                    app = $.parseJSON(bc.api.file.get(settingsPath)),
+                var app = $.parseJSON(bc.api.file.get(settingsPath)),
                     checkedFiles = [];
                     checkedFiles = $.map($("#updateTree").dynatree("getSelectedNodes"), function(node) { if(!node.childList){ return node.data.key } });
                 
@@ -233,10 +242,10 @@ $(function() {
                 }
                 updateApp(count);
 
-                setTimeout(function() {
+                /*setTimeout(function() {
                     bc.api.file.save(settingsPath, JSON.stringify(app));
                     appScripts.ui.hideLoading();
-                }, 3000);
+                }, 3000);*/
             });
         }
     };
