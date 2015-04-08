@@ -14,16 +14,18 @@
 </head>
  
 <body>
-	<div class="small-12 columns">
-		<input type="button" class="button" name="btnUpdateApp" value="Update App"/>
-		<br />
-		<div id="updateTree" class="tree"></div>
+	<div id="pagecontainer" class="hide">
+		<div class="small-12 columns">
+			<input type="button" class="button" name="btnUpdateApp" value="Update App"/>
+			<br />
+			<div id="updateTree" class="tree"></div>
+		</div>
+		<div id="bcmodules" style="display:none;"
+			data-bc-pageaddress="{module_pageaddress}"
+			data-bc-sitehost="{module_sitehost}"
+			data-bc-siteurl="{module_siteurl}"
+		></div>
 	</div>
-	<div id="bcmodules" style="display:none;"
-		data-bc-pageaddress="{module_pageaddress}"
-		data-bc-sitehost="{module_sitehost}"
-		data-bc-siteurl="{module_siteurl}"
-	></div>
 
 	<script src="/_system/apps/bcpie-bcpie/scripts/min/appFoot.min.js"></script>
 	<script src="/_system/AppResources/scripts/oneapps.js"></script>
