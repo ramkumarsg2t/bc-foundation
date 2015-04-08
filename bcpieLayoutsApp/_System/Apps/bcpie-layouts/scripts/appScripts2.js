@@ -4,8 +4,7 @@ var doc = document,
     win = window,
     bcmodules = body.find('#bcmodules'),
     appPath = '_System/apps/bcpie-bcpie/',
-   // settingsPath = appPath + 'scripts/settings.json',
-    settingsPath = appPath + 'settings.json',
+    settingsPath = appPath + 'scripts/settings.json',
     oauthTokenAPI = "https://framework-bcpie.rhcloud.com/api/git-token",
     frameworkName ='', frameworkUserName='', frameworkRepository='';
  //test comment123
@@ -47,7 +46,7 @@ $(function() {
                             frameworkUserName =  registry.repos[0].username;
                             frameworkRepository = registry.repos[0].repository;
                             bindFrameworkSelectEvent();
-                            appScripts.checkAppUpdate();
+                            
                         });
                         appScripts.ui.hideLoading();
                     }
@@ -249,6 +248,7 @@ $(function() {
                 }, 3000);*/
             });
         }
-    };
+    };   
     appScripts.updateBCPie();
+    appScripts.checkAppUpdate();
 });
