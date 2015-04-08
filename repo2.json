@@ -46,10 +46,6 @@
                                     "type" : "file"
                                 },
                                 {
-                                    "name" : "settings.json",
-                                    "type" : "file"
-                                },
-                                {
                                     "name" : "min",
                                     "type" : "folder",
                                     "files" : [
