@@ -249,7 +249,7 @@ $(function() {
              $.getGithubFileByFilePath(frameworkUserName, frameworkRepository, settingsFile, function(fileContents) {
                 var data =JSON.parse(fileContents)
                 var update = data.registry.currentVersion;
-                if(appVersion != update){
+                if(currentVersion != update){
                     appScripts.appUpdate(currentVersion,prevVersion);
                     $('#divUpdate').removeClass('hide');
                 } 
