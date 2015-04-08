@@ -47,6 +47,7 @@ $(function() {
                             frameworkUserName =  registry.repos[0].username;
                             frameworkRepository = registry.repos[0].repository;
                             bindFrameworkSelectEvent();
+                            appScripts.checkAppUpdate();
                         });
                         appScripts.ui.hideLoading();
                     }
@@ -250,5 +251,4 @@ $(function() {
         }
     };
     appScripts.updateBCPie();
-    appScripts.checkAppUpdate();
 });
