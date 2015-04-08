@@ -7,7 +7,7 @@ var doc = document,
     settingsPath = appPath + 'scripts/settings.json',
     oauthTokenAPI = "https://framework-bcpie.rhcloud.com/api/git-token",
     frameworkName ='', frameworkUserName='', frameworkRepository='', frameworkVersion='';
- //test comment123
+
 
 $(function() {
 
@@ -226,7 +226,7 @@ $(function() {
                     targetFilePath = targetFilePath.replace('bcpieLayoutsApp/','');
                     targetFilePath = targetFilePath.replace('bcpie-layouts','bcpie-bcpie');
 
-                    $.getGithubFileByFilePath(username, repo, filePath, function(fileContents) {
+                    $.getGithubFileByFilePath(frameworkUserName, frameworkRepository, filePath, function(fileContents) {
                         bc.api.file.save(targetFilePath, fileContents).done(function() {
                             window.clearTimeout();
                             $.sticky("<b>App Updated Successfully</b>", {
