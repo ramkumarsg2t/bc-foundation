@@ -46,7 +46,7 @@ $(function() {
                             frameworkUserName =  registry.repos[0].username;
                             frameworkRepository = registry.repos[0].repository;
                             bindFrameworkSelectEvent();
-                            appScripts.checkAppUpdate(app.registry.version);
+                            appScripts.checkAppUpdate(app.registry.currentVersion, app.registry.lastVersion);
                             
                         });
                         appScripts.ui.hideLoading();
@@ -201,7 +201,7 @@ $(function() {
             bindRadioCheckEvent();
 
         },
-        appUpdate : function(){
+        appUpdate : function(currVer, prevVer){
             $('input[name="btnUpdateApp"]').on('click',function(){
                 $('#divUpdate').addClass('hide');
                 appScripts.ui.showLoading();
@@ -236,21 +236,21 @@ $(function() {
                 }
                 update(count);
 
-                /*setTimeout(function() {
+                setTimeout(function() {
                     bc.api.file.save(settingsPath, JSON.stringify(app));
                     appScripts.ui.hideLoading();
-                }, 3000);*/
+                }, 3000);
             });
         }, //appUpdate
 
-        checkAppUpdate: function(appVersion){
-            var version = appVersion;
+        checkAppUpdate: function(currVersion, prevVersion){
+            var currentVersion = currVersion;
              var settingsFile = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/scripts/settings.json";
              $.getGithubFileByFilePath(frameworkUserName, frameworkRepository, settingsFile, function(fileContents) {
                 var data =JSON.parse(fileContents)
-                var update = data.registry.version;
+                var update = data.registry.currentVersion;
                 if(appVersion != update){
-                    appScripts.appUpdate();
+                    appScripts.appUpdate(currentVersion,prevVersion);
                     $('#divUpdate').removeClass('hide');
                 } 
             }); 
