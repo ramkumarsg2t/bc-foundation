@@ -7,7 +7,7 @@ var doc = document,
     settingsPath = appPath + 'scripts/settings.json',
     oauthTokenAPI = "https://framework-bcpie.rhcloud.com/api/git-token",
     frameworkName ='', frameworkUserName='', frameworkRepository='';
- //test comment
+ //test comment123
 
 $(function() {
 
