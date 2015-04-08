@@ -202,15 +202,7 @@ $(function() {
 
         },
         appUpdate : function(){
-            //check if update is available
-             var settingsFile = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/settings.json";
-             var targetSettingsFile = "_System/Apps/bcpie-layouts/settings.json";
-             var repo = frameworkRepository;
-             var username = frameworkUserName;
-             $.getGithubFileByFilePath(username, repo, settingsFile, function(fileContents) {
-                var content =  $.parseJSON(bc.api.file.get(settingsPath));
-                console.log(content);
-            }); 
+            
 
             $('#divUpdate').removeClass('hide');
             $('input[name="btnUpdateApp"]').on('click',function(){
@@ -252,7 +244,10 @@ $(function() {
 
         checkAppUpdate: function(appVersion){
             var version = appVersion;
-            console.log(version);
+             var settingsFile = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/settings.json";
+             $.getGithubFileByFilePath(frameworkUserName, frameworkRepository, settingsFile, function(fileContents) {
+                var content =  fileContents;
+            }); 
         }
     };   
     appScripts.updateBCPie();
