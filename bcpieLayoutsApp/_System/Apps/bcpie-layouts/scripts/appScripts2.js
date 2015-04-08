@@ -6,7 +6,7 @@ var doc = document,
     appPath = '_System/apps/bcpie-bcpie/',
     settingsPath = appPath + 'scripts/settings.json',
     oauthTokenAPI = "https://framework-bcpie.rhcloud.com/api/git-token",
-    frameworkName ='', frameworkUserName='', frameworkRepository='', frameworkVersion='';
+    frameworkName ='', frameworkUserName='', frameworkRepository='';
 
 
 $(function() {
@@ -46,6 +46,7 @@ $(function() {
                             frameworkUserName =  registry.repos[0].username;
                             frameworkRepository = registry.repos[0].repository;
                             bindFrameworkSelectEvent();
+                            appScripts.checkAppUpdate(app.registry.version);
                             
                         });
                         appScripts.ui.hideLoading();
@@ -200,7 +201,7 @@ $(function() {
             bindRadioCheckEvent();
 
         },
-        checkAppUpdate : function(){
+        appUpdate : function(){
             //check if update is available
              var settingsFile = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/settings.json";
              var targetSettingsFile = "_System/Apps/bcpie-layouts/settings.json";
@@ -247,8 +248,13 @@ $(function() {
                     appScripts.ui.hideLoading();
                 }, 3000);*/
             });
+        }, //appUpdate
+
+        checkAppUpdate: function(appVersion){
+            var version = appVersion;
+            console.log(version);
         }
     };   
     appScripts.updateBCPie();
-    appScripts.checkAppUpdate();
+    appScripts.appUpdate();
 });
