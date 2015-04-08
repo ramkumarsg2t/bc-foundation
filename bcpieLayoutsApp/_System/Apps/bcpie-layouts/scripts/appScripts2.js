@@ -41,9 +41,6 @@ $(function() {
                             registry = JSON.parse(contents);
                             var selectHtml = "";
                             console.log(registry);
-                            /*for (i = 0; i < registry.repos.length; i++) {
-                                frameworkSelect.append('<option value="' + registry.repos[i].name + '" data-username="' + registry.repos[i].username + '"  data-repository="' + registry.repos[i].repository + '" >' + registry.repos[i].name + " " + registry.repos[i].version + '</option>');
-                            }*/
 
                             frameworkName = registry.repos[0].name;
                             frameworkUserName =  registry.repos[0].username;
@@ -57,7 +54,6 @@ $(function() {
 
             function bindFrameworkSelectEvent() {
                     appScripts.ui.showLoading();
-                    //if (typeof $(this).val() !== "undefined" && $(this).val() !== "") {
                         var repo = frameworkRepository,
                             username = frameworkUserName;
                         $.getGithubFileByFilePath(username, repo, "repo2.json", function(contents) {
@@ -70,10 +66,6 @@ $(function() {
                             folderContainer.removeClass('hide');
                             appScripts.ui.hideLoading();
                         });
-                   // } else {
-                     //   folderContainer.addClass('hide');
-                       // appScripts.ui.hideLoading();
-                  //  }
             }
 
             function parseTreeData(repoStructure){
@@ -209,7 +201,6 @@ $(function() {
         },
         checkAppUpdate : function(){
             $('#divUpdate').removeClass('hide');
-            var frameworkSelect = body.find('[name="frameworks"]');
             $('input[name="btnUpdateApp"]').on('click',function(){
                 appScripts.ui.showLoading();
                 var repo = frameworkRepository,
@@ -218,22 +209,7 @@ $(function() {
                     checkedFiles = [];
                     checkedFiles = $.map($("#updateTree").dynatree("getSelectedNodes"), function(node) { if(!node.childList){ return node.data.key } });
                 
-               /* for (i = 0; i < checkedFiles.length; i++) {
-                    var filePath = checkedFiles[i].replace("bcpieLayoutsApp/","");
-                    filePath = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/" + filePath;
-                    var targetFilePath = filePath;
-                    targetFilePath = targetFilePath.replace('bcpieLayoutsApp/','');
-                    targetFilePath = targetFilePath.replace('bcpie-layouts','bcpie-bcpie');
-                    $.getGithubFileByFilePath(username, repo, filePath, function(fileContents) {
-                        bc.api.file.save(targetFilePath, fileContents).done(function() {
-                            window.clearTimeout();
-                            $.sticky("<b>App Updated Successfully</b>", {
-                                closeImage: "/_system/apps/bcpie-layouts/images/close.png"
-                            });
-                        });
-                    });
-                }*/
-                 var count = 0;
+                var count = 0;
                 var updateApp = function(count) {
                     var filePath = checkedFiles[count].replace("bcpieLayoutsApp/","");
                     filePath = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/" + filePath;
@@ -245,10 +221,10 @@ $(function() {
                         bc.api.file.save(targetFilePath, fileContents).done(function() {
                             window.clearTimeout();
                             $.sticky("<b>App Updated Successfully</b>", {
-                                closeImage: "/_system/apps/bcpie-layouts/images/close.png"
+                                closeImage: "/_system/apps/bcpie-bcpie/images/close.png"
                             });
                         });
-                    });
+                    }); 
 
                       count++;
                      if(count <  checkedFiles.length){
