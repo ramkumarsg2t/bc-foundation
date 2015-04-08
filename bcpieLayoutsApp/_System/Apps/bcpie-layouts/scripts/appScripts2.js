@@ -202,8 +202,8 @@ $(function() {
 
         },
         appUpdate : function(){
-            $('#divUpdate').addClass('hide');
             $('input[name="btnUpdateApp"]').on('click',function(){
+                $('#divUpdate').addClass('hide');
                 appScripts.ui.showLoading();
                 var app = $.parseJSON(bc.api.file.get(settingsPath)),
                     checkedFiles = [];
