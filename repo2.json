@@ -73,6 +73,10 @@
                                 {
                                     "name" : "ui.dynatree.vista.css",
                                     "type" : "file"
+                                },
+                                {
+                                    "name" : "app.css",
+                                    "type" : "file"
                                 }
                             ]
                         },
