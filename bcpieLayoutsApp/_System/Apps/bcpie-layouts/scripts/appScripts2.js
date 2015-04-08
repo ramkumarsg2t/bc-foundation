@@ -229,6 +229,7 @@ $(function() {
                      if(count <  checkedFiles.length){
                         updateApp(count);   
                      }
+                     else appScripts.ui.hideLoading();
                 }
                 updateApp(count);
 
