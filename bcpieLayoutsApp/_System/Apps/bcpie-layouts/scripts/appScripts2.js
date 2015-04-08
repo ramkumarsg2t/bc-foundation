@@ -244,7 +244,7 @@ $(function() {
 
         checkAppUpdate: function(appVersion){
             var version = appVersion;
-             var settingsFile = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/settings.json";
+             var settingsFile = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/scripts/settings.json";
              $.getGithubFileByFilePath(frameworkUserName, frameworkRepository, settingsFile, function(fileContents) {
                 var content =  fileContents;
             }); 
