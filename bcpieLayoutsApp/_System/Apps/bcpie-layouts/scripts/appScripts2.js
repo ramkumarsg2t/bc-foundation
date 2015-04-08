@@ -210,6 +210,7 @@ $(function() {
                 
                 var count = 0;
                 var updateApp = function(count) {
+                    $('#divUpdate').addClass('hide');
                     var filePath = checkedFiles[count].replace("bcpieLayoutsApp/","");
                     filePath = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/" + filePath;
                     var targetFilePath = filePath;
@@ -229,7 +230,9 @@ $(function() {
                      if(count <  checkedFiles.length){
                         updateApp(count);   
                      }
-                     else appScripts.ui.hideLoading();
+                     else{
+                       appScripts.ui.hideLoading(); 
+                     } 
                 }
                 updateApp(count);
 
