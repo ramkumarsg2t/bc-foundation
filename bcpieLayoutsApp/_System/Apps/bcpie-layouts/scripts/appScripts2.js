@@ -202,9 +202,6 @@ $(function() {
 
         },
         appUpdate : function(){
-            
-
-            $('#divUpdate').removeClass('hide');
             $('input[name="btnUpdateApp"]').on('click',function(){
                 appScripts.ui.showLoading();
                 var app = $.parseJSON(bc.api.file.get(settingsPath)),
@@ -246,10 +243,14 @@ $(function() {
             var version = appVersion;
              var settingsFile = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/scripts/settings.json";
              $.getGithubFileByFilePath(frameworkUserName, frameworkRepository, settingsFile, function(fileContents) {
-                var content =  fileContents;
+                var data =JSON.parse(fileContents)
+                var update = data.registry.version;
+                if(appVersion != update){
+                    appScripts.appUpdate();
+                    $('#divUpdate').removeClass('hide');
+                } 
             }); 
         }
     };   
     appScripts.updateBCPie();
-    appScripts.appUpdate();
 });
