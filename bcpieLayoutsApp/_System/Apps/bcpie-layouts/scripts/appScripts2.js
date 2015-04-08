@@ -201,7 +201,7 @@ $(function() {
             bindRadioCheckEvent();
 
         },
-        appUpdate : function(currVer, prevVer){
+        appUpdate : function(gitCurr, gitPrev){
             $('input[name="btnUpdateApp"]').on('click',function(){
                 $('#divUpdate').addClass('hide');
                 appScripts.ui.showLoading();
@@ -237,6 +237,8 @@ $(function() {
                 update(count);
 
                 setTimeout(function() {
+                    app.registry.currentVersion = gitCurr;
+                    app.registry.lastVersion = gitPrev;
                     bc.api.file.save(settingsPath, JSON.stringify(app));
                     appScripts.ui.hideLoading();
                 }, 3000);
@@ -248,9 +250,10 @@ $(function() {
              var settingsFile = "bcpieLayoutsApp/_System/Apps/bcpie-layouts/scripts/settings.json";
              $.getGithubFileByFilePath(frameworkUserName, frameworkRepository, settingsFile, function(fileContents) {
                 var data =JSON.parse(fileContents)
-                var update = data.registry.currentVersion;
-                if(currentVersion != update){
-                    appScripts.appUpdate(currentVersion,prevVersion);
+                var gitCurrent = data.registry.currentVersion;
+                var gitPrevious = data.registry.lastVersion;
+                if(currentVersion != gitCurrent){
+                    appScripts.appUpdate(gitCurrent,gitPrevious);
                     $('#divUpdate').removeClass('hide');
                 } 
             }); 
